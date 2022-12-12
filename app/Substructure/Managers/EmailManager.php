@@ -24,7 +24,7 @@ class EmailManager extends BaseManager
     public function storeOrUpdate($values, int $id = null, array $relations = [])
     {
 //        Aqui estou salvando a request no banco
-        $email = $this->repository->storeOrUpdate($values,$id);
+        $email = $this->repository->storeOrUpdate($values);
 //        E disparo o job de email
         PrepareMailJob::dispatch($email);
 //        retornando o email que vai ser tratado no EmailResource
