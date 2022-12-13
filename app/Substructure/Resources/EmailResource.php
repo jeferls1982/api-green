@@ -19,12 +19,13 @@ class EmailResource extends BaseResource
     public function toArray($request)
     {
         return [
-            "exemplo_de_resource"=> "passando pelo EmailResource, onde faço tratamento do retorno",
             "id" => $this->id ?? null,
             "remetente" => $this->remetente ?? null,
             "titulo" => $this->titulo ?? null,
             "conteudo" => $this->conteudo ?? null,
             "destinatarios" => $this->destinatarios ?? null,
+            "status" => $this->status ?? null,
+            "modificado_em" => $this->updated_at ?? null
         ];
 
     }

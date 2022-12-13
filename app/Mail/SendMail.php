@@ -6,12 +6,13 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Exception;
 
 class SendMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    protected $data,$dest;
+    public $data,$dest;
     /**
      * Create a new message instance.
      *
@@ -30,14 +31,18 @@ class SendMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
+        try{
+            return $this->from($this->data->remetente)
+                ->to($this->dest)
+                ->view('emails.teste')
+                ->with([
+                    "data" => $this->data,
+                    "destinatario" => $this->dest
+                ]);
+        }catch (Exception $e){
+            dd($e);
+        }
 
-        return $this->from($this->data->remetente)
-            ->to($this->dest)
-            ->view('emails.teste')
-            ->with([
-                "data" => $this->data,
-                "destinatario" => $this->dest
-            ]);
 
     }
 }

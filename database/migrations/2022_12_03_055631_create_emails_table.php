@@ -19,6 +19,8 @@ class CreateEmailsTable extends Migration
             $table->string("remetente");
             $table->longText("destinatarios");
             $table->longText("conteudo");
+            $table->integer("job_id")->nullable();
+            $table->string('status')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

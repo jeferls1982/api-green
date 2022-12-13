@@ -13,6 +13,7 @@
         "freelabois/laravel-quickstart": "^1.0",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^7.5",
+        "imtigger/laravel-job-status": "^1.2",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "php-amqplib/php-amqplib": "*",
@@ -28,7 +29,9 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "disable-tls": false,
+        "secure-http": true
     },
     "extra": {
         "laravel": {

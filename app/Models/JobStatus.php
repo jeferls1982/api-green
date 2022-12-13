@@ -5,19 +5,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class Email extends Model
+class JobStatus extends Model
 {
-    use SoftDeletes;
 
-    protected $table = "emails";
+    protected $table = "job_statuses";
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'titulo', 'remetente','destinatarios','conteudo','job_id','status'
-    ];
 
 
 }

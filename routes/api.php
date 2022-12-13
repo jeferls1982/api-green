@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 // extender a classe crudable e importar os repositories e manager, caso necessite
 Route::apiResource('/emails', EmailsController::class);
 
+Route::get('verifica-falhas','EmailsController@verificaFalhas');
 
 
 

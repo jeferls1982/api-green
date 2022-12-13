@@ -3,18 +3,21 @@
 namespace App\Jobs;
 
 use App\Mail\SendMail;
+use App\Substructure\Repositories\EmailRepository;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
+use Imtigger\LaravelJobStatus\Trackable;
+
 
 class PrepareMailJob implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, Trackable;
 
-    protected $data;
+    protected $data, $email_repository;
 
     /**
      * Create a new job instance.
@@ -23,7 +26,9 @@ class PrepareMailJob implements ShouldQueue
      */
     public function __construct($data)
     {
+        $this->prepareStatus();
         $this->data = $data;
+        $this->email_repository = app()->make(EmailRepository::class);
     }
 
     /**
