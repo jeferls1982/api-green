@@ -15,7 +15,7 @@
 
 
 <h3>Visualisando os e-mails no mailtrap.io utilizando as configurações do <code>.env</code></h3>
-<a h-ref="https://mailtrap.io/">mailtrap.io</a>
+[mailtrap.io](https://mailtrap.io)
 
 <p>user -  <code>testecreativepg@gmail.com</code></p>
 <p>senha -  <code>Hilbert2022</code></p>
