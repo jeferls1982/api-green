@@ -6,7 +6,7 @@
 <p>5 - volte para a pasta raiz do projeto <code>cd ..</code></p>
 <p>6 - <code>php artisan:key generate</code></p>
 <p>7 - <code>php artisan migrate</code></p>
-<p>8 - <code>php artisan serve</code></p>
+<p>8 - <code>php artisan serve --port 9000</code></p>
 
 
 <h3>Ativando o worker</h3>
