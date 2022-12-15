@@ -1,5 +1,5 @@
 <h3>Instalando o sistema</h3>
-<p>1 - clone o projeto <code>git clone </code></p>
+<p>1 - clone o projeto <code>git clone https://github.com/jeferls1982/api-green</code></p>
 <p>2 - abra o terminal na pasta raiz do projeto</p>
 <p>3 - <code>cd laradock</code></p>
 <p>4 - rode o comando <code>docker-compose up -d nginx mysql rabbitmq</code></p>
