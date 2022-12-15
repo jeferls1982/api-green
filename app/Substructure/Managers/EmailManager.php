@@ -30,6 +30,7 @@ class EmailManager extends BaseManager
 
     public function storeOrUpdate($values, int $id = null, array $relations = [])
     {
+
 //        Aqui estou salvando a request no banco
         $values['status'] = "Enviado";
         $email = $this->repository->storeOrUpdate($values);
@@ -57,8 +58,6 @@ class EmailManager extends BaseManager
         foreach ($faileds as $item){
             $email_id = unserialize(json_decode($item->payload)->data->command)->mailable->data->id;
             $this->repository->storeOrUpdate(['status'=> 'Falha'], $email_id);
-//            $item->delete();
-
         }
         return "ok";
 

@@ -6,6 +6,7 @@ use App\Substructure\Managers\EmailManager;
 use App\Substructure\Repositories\EmailRepository;
 use App\Substructure\Resources\EmailResource;
 use Freelabois\LaravelQuickstart\Extendables\CrudController;
+use Illuminate\Http\Client\Request;
 
 
 class EmailsController extends CrudController
@@ -31,8 +32,19 @@ class EmailsController extends CrudController
 
     public function index()
     {
-        return $this->repository->setOrder('id','desc')->list();
+        $values = request()->all();
+        $filter = $values['filter'] ?? null;
+
+        if($filter){
+            return $this->repository->setOrder('id','desc')->list(["status" => $filter],[],false);
+        }else{
+            return $this->repository->setOrder('id','desc')->list([],[],8);
+
+        }
+//
     }
+
+
 
 
     public function verificaFalhas(){
