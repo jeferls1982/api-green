@@ -13,3 +13,9 @@
 <p>1 - Abra outro terminal na raiz do projeto</p>
 <p>2 - rode o comando <code>php artisan rabbitmq:consume</code></p>
 
+
+<h3>Visualisando os e-mails no mailtrap.io utilizando as configurações do <code>.env</code></h3>
+<p>[<a h-ref="">](https://mailtrap.io/)</p>
+
+<p>user - rode o comando <code>testecreativepg@gmail.com</code></p>
+<p>senha - rode o comando <code>Hilbert2022</code></p>
