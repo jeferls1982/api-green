@@ -29,8 +29,10 @@ class EmailsController extends CrudController
 //    processo
 
 
-
-
+    public function index()
+    {
+        return $this->repository->setOrder('id','desc')->list();
+    }
 
 
     public function verificaFalhas(){

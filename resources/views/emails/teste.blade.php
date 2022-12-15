@@ -5,12 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Teste Greenn</title>
+    <title>{{$data->titulo}}</title>
 </head>
 <body>
-<h3>Olá {{$destinatario}}</h3>
-<h4>Assunto: {{$data->titulo}}</h4>
-<hr/>
-<p>{{$data->conteudo}}</p>
+
+    {!! $data->conteudo !!}
+
 </body>
 </html>

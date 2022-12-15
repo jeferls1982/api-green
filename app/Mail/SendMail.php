@@ -34,10 +34,11 @@ class SendMail extends Mailable implements ShouldQueue
         try{
             return $this->from($this->data->remetente)
                 ->to($this->dest)
+                ->from($this->data->remetente)
+                ->subject($this->data->titulo)
                 ->view('emails.teste')
                 ->with([
-                    "data" => $this->data,
-                    "destinatario" => $this->dest
+                    "data" => $this->data
                 ]);
         }catch (Exception $e){
             dd($e);
